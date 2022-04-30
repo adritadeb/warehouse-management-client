@@ -1,0 +1,14 @@
+.banner {
+    border: 3px solid darkcyan;
+    border-radius: 15px;
+    padding: 40px;
+    width: 1100px;
+}
+
+.banner:hover {
+    border: 6px solid darkcyan;
+    background-color: rgba(0, 139, 139, 0.589);
+    color: white;
+    width: 1200px;
+    height: 500px;
+}
