@@ -8,15 +8,21 @@ import SocialLogin from '../SocialLogin/SocialLogin';
 const Login = () => {
     const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
     const navigate = useNavigate();
+    let errorMessage;
 
     const handleLogin = event => {
         event.preventDefault();
         const email = event.target.email.value;
         const password = event.target.password.value;
         signInWithEmailAndPassword(email, password);
+        event.reset();
     }
     if (user) {
         navigate('/home');
+    }
+
+    if (error) {
+        errorMessage = <p className='text-danger'>Error: {error?.message}</p>
     }
 
     return (
@@ -36,6 +42,7 @@ const Login = () => {
                 </Button>
             </Form>
             <p className='mt-4'>New to Books Stocker? <Link className='text-decoration-none' to='/register'>Please Register</Link></p>
+            {errorMessage}
             <SocialLogin></SocialLogin>
         </div>
     );

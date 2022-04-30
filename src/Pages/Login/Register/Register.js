@@ -8,6 +8,7 @@ import SocialLogin from '../SocialLogin/SocialLogin';
 const Register = () => {
     const [createUserWithEmailAndPassword, user, loading, error] = useCreateUserWithEmailAndPassword(auth);
     const navigate = useNavigate();
+    let errorMessage;
 
     const handleRegister = event => {
         event.preventDefault();
@@ -18,6 +19,10 @@ const Register = () => {
 
     if (user) {
         navigate('/home');
+    }
+
+    if (error) {
+        errorMessage = <p className='text-danger'>Error: {error?.message}</p>
     }
 
     return (
@@ -41,6 +46,7 @@ const Register = () => {
                 </Button>
             </Form>
             <p className='mt-4'>Already have an account? <Link className='text-decoration-none' to='/login'>Please Login</Link></p>
+            {errorMessage}
             <SocialLogin></SocialLogin>
         </div>
     );

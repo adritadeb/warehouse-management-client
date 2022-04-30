@@ -6,17 +6,19 @@ import auth from '../../../firebase.init';
 const SocialLogin = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
     const navigate = useNavigate();
-
-    if (loading) {
-        <p>loading...</p>
-    }
+    let errorMessage;
 
     if (user) {
         navigate('/home');
     }
 
+    if (error) {
+        errorMessage = <p className='text-danger'>Error: {error?.message}</p>
+    }
+
     return (
         <div>
+            {errorMessage}
             <div className='d-flex align-items-center'>
                 <div className='border border-1 w-50'></div>
                 <p className='mt-2 mx-3'>or</p>
