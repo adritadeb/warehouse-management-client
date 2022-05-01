@@ -3,6 +3,7 @@ import { Button, Form } from 'react-bootstrap';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import Loading from '../../Shared/Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Register = () => {
@@ -23,6 +24,10 @@ const Register = () => {
 
     if (error) {
         errorMessage = <p className='text-danger'>Error: {error?.message}</p>
+    }
+
+    if (loading) {
+        return <Loading></Loading>
     }
 
     return (
