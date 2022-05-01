@@ -13,7 +13,7 @@ const Books = () => {
     }, []);
     const slicedBooks = books.slice(0, 6);
     return (
-        <div className='container'>
+        <div id='books' className='container'>
             <h2 className='text-center mb-4'>Books</h2>
             <div className='books ms-5'>
                 {
