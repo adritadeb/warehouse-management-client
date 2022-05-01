@@ -6,7 +6,7 @@ const Footer = () => {
     const today = new Date();
     const year = today.getFullYear();
     return (
-        <footer className='d-flex justify-content-evenly align-items-center'>
+        <footer className='d-flex justify-content-evenly align-items-center mt-5'>
             <h4 className='fs-3'>Books Stocker</h4>
             <div className='d-flex justify-content-center align-items-center'>
                 <p><small>copyright</small></p>
