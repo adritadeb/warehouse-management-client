@@ -3,3 +3,7 @@
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 25px;
 }
+
+.manage-btn {
+    margin-left: 300px;
+}
