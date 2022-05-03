@@ -34,7 +34,7 @@ const Inventory = () => {
                     <form>
                         <input className='my-4 ms-4 w-75' placeholder='Put a number' type="number" name="quantity" />
                         <br />
-                        <input className='btn btn-primary mx-auto w-100' type="submit" value="Increase Quantity" />
+                        <input className='btn btn-primary mx-auto w-100' type="submit" value="Restock" />
                     </form>
                 </div>
             </div>

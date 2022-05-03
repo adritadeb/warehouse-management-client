@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import ManageInventory from '../ManageInventory/ManageInventory';
 
 const ManageInventories = () => {
@@ -22,7 +23,6 @@ const ManageInventories = () => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data);
                     const remainingData = books.filter(book => book._id !== id);
                     setBooks(remainingData);
                 })
@@ -31,7 +31,7 @@ const ManageInventories = () => {
 
     return (
         <div>
-            <h2 className='text-center my-4'>Manage Inventories</h2>
+            <h2 className='text-center my-5'>Manage Inventories</h2>
             <Table striped bordered hover size="sm">
                 <thead>
                     <tr>
@@ -53,6 +53,7 @@ const ManageInventories = () => {
                     ></ManageInventory>)
                 }
             </div>
+            <Link to='/addInventoryItem'><button className='btn btn-primary border-0 w-25 ms-2 my-3 py-2 rounded-3 fs-5'>Add Inventory Item</button></Link>
         </div>
     );
 };
