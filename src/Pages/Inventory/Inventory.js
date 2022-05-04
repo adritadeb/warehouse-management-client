@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from "react-router-dom";
+import { toast } from 'react-toastify';
 
 const Inventory = () => {
     const { id } = useParams();
     const [book, setBook] = useState({});
+    const [itemQuantity, setItemQuantity] = useState('');
 
     useEffect(() => {
         const url = `http://localhost:5000/inventory/${id}`;
@@ -11,6 +13,29 @@ const Inventory = () => {
             .then(res => res.json())
             .then(data => setBook(data));
     }, []);
+
+    const increaseQuantity = event => {
+        event.preventDefault();
+
+        const quantity = event.target.quantity.value;
+        const updatedQuantity = { quantity };
+
+        const url = `http://localhost:5000/inventory/${id}`;
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(updatedQuantity)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log('success', updatedQuantity);
+                setItemQuantity(updatedQuantity.quantity);
+                toast('Item stocked successfully');
+                event.target.reset();
+            });
+    }
     const { img, name, supplier, body, quantity, price } = book;
 
     return (
@@ -23,7 +48,7 @@ const Inventory = () => {
                         <h4>Supplier: {supplier}</h4>
                         <p>{body}</p>
                         <div className='d-flex justify-content-between'>
-                            <h4>Quantity: {quantity}</h4>
+                            <h4>Quantity: {itemQuantity}</h4>
                             <button className='btn btn-primary border-0'>Delivered</button>
                         </div>
                         <h3>Price: ${price}</h3>
@@ -31,10 +56,10 @@ const Inventory = () => {
                 </div>
                 <div className='border border-2 border-secondary rounded-3 m-5 p-3 w-25 h-50'>
                     <h4 className='text-center'>Restock the items</h4>
-                    <form>
+                    <form onSubmit={increaseQuantity}>
                         <input className='my-4 ms-4 w-75' placeholder='Put a number' type="number" name="quantity" />
                         <br />
-                        <input className='btn btn-primary mx-auto w-100' type="submit" value="Restock" />
+                        <input className='btn btn-primary mx-auto w-100' type="submit" value="Stock" />
                     </form>
                 </div>
             </div>
