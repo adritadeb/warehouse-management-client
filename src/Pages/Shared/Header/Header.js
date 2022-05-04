@@ -26,11 +26,18 @@ const Header = () => {
                         <Nav>
                             {
                                 user ?
-                                    < button onClick={handleSignOut} className='btn btn-link text-decoration-none text-light'>Logout</button>
+                                    <div className='d-flex'>
+                                        <Nav.Link as={Link} to="/manageInventories">Manage Books</Nav.Link>
+                                        <Nav.Link as={Link} to="/addInventoryItem">Add Book</Nav.Link>
+                                        <Nav.Link as={Link} to="/myItems">My Books</Nav.Link>
+                                        < button onClick={handleSignOut} className='btn btn-link text-decoration-none text-light'>Logout</button>
+                                    </div>
                                     :
-                                    < Nav.Link as={Link} to="/login">Login</Nav.Link>
+                                    <div className='d-flex'>
+                                        < Nav.Link as={Link} to="/login">Login</Nav.Link>
+                                        <Nav.Link as={Link} to="/register">Registration</Nav.Link>
+                                    </div>
                             }
-                            <Nav.Link as={Link} to="/register">Registration</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

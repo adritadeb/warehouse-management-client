@@ -23,7 +23,8 @@ const AddInventoryItem = () => {
         })
             .then(res => res.json())
             .then(data => {
-                toast('item added');
+                console.log(data.insertedId);
+                toast('A new item added');
                 event.target.reset();
             });
     };
@@ -32,17 +33,17 @@ const AddInventoryItem = () => {
         <div className='container'>
             <h2 className='text-center my-4'>Add a new item</h2>
             <form onSubmit={handleAddItem} className='w-50 mx-auto'>
-                <input className='mb-2 w-100' type="text" name="name" placeholder='Name' required />
+                <input className='mb-2 w-100' type="text" name="name" placeholder='Name' required autoComplete='off' />
                 <br />
-                <input className='w-100' type="text" name="supplier" placeholder='Supplier' required />
+                <input className='w-100' type="text" name="supplier" placeholder='Supplier' required autoComplete='off' />
                 <br />
-                <input className='my-2 w-100' type="text" name="price" placeholder='Price' required />
+                <input className='my-2 w-100' type="text" name="price" placeholder='Price' required autoComplete='off' />
                 <br />
                 <textarea style={{ height: '100px' }} className='w-100' name="description" placeholder='Short Description' id="" cols="30" rows="10" required></textarea>
                 <br />
                 <input className='my-2 w-100' type="number" name="quantity" placeholder='Quantity' required />
                 <br />
-                <input className='mb-3 w-100' type="text" name="image" placeholder='image url' required />
+                <input className='mb-3 w-100' type="text" name="image" placeholder='Image url' required autoComplete='off' />
                 <br />
                 <input className='w-100 btn btn-primary rounded-3' type="submit" value="Add Item" />
             </form>
