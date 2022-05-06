@@ -5,7 +5,6 @@ import { toast } from 'react-toastify';
 const Inventory = () => {
     const { id } = useParams();
     const [book, setBook] = useState({});
-    const [itemQuantity, setItemQuantity] = useState('');
 
     useEffect(() => {
         const url = `http://localhost:5000/inventory/${id}`;
@@ -14,9 +13,12 @@ const Inventory = () => {
             .then(data => setBook(data));
     }, []);
 
+    const { img, name, supplier, body, quantity, price } = book;
+
+    const [itemQuantity, setItemQuantity] = useState('');
+
     const increaseQuantity = event => {
         event.preventDefault();
-
         const quantity = event.target.quantity.value;
         const updatedQuantity = { quantity };
 
@@ -30,13 +32,12 @@ const Inventory = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log('success', updatedQuantity);
                 setItemQuantity(updatedQuantity.quantity);
                 toast('Item stocked successfully');
                 event.target.reset();
             });
     }
-    const { img, name, supplier, body, quantity, price } = book;
+
 
     return (
         <div>
@@ -48,8 +49,10 @@ const Inventory = () => {
                         <h4>Supplier: {supplier}</h4>
                         <p>{body}</p>
                         <div className='d-flex justify-content-between'>
-                            <h4>Quantity: {itemQuantity}</h4>
-                            <button className='btn btn-primary border-0'>Delivered</button>
+                            <h4>Quantity: {
+                                itemQuantity ? itemQuantity : quantity
+                            }</h4>
+                            <input className='btn btn-primary border-0' type="submit" value="Delivered" />
                         </div>
                         <h3>Price: ${price}</h3>
                     </div>

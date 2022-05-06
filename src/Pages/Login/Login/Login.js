@@ -1,4 +1,5 @@
-import React, { useRef } from 'react';
+import axios from 'axios';
+import React, { useState, useEffect, useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
@@ -17,13 +18,30 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
+    const [token, setToken] = useState('');
 
-    const handleLogin = event => {
+    useEffect(() => {
+        const getToken = async () => {
+            const email = user?.user?.email;
+            if (email) {
+                const { data } = await axios.post('http://localhost:5000/login', { email });
+                setToken(data.accessToken);
+                localStorage.setItem('accessToken', data.accessToken);
+            }
+        };
+        getToken();
+    }, [user])
+
+
+    const handleLogin = async event => {
         event.preventDefault();
         const email = event.target.email.value;
         const password = event.target.password.value;
 
-        signInWithEmailAndPassword(email, password);
+        await signInWithEmailAndPassword(email, password);
+
+        const { data } = await axios.post('http://localhost:5000/login', { email });
+        localStorage.setItem('accessToken', data.accessToken);
     }
 
     const handleResetPassword = async () => {
@@ -38,7 +56,7 @@ const Login = () => {
         }
     }
 
-    if (user) {
+    if (token) {
         navigate(from, { replace: true });
     }
 
