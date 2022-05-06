@@ -41,6 +41,7 @@ const Inventory = () => {
 
     return (
         <div>
+            {/* show item with id */}
             <div className='d-md-flex justify-content-center align-items-center container'>
                 <div className='single-book w-md-25 m-5'>
                     <img className='w-100' src={img} alt="" />
@@ -57,6 +58,8 @@ const Inventory = () => {
                         <h3>Price: ${price}</h3>
                     </div>
                 </div>
+
+                {/* Item restock section */}
                 <div className='border border-2 border-secondary rounded-3 m-5 p-3 w-md-25 h-50'>
                     <h4 className='text-center'>Restock the items</h4>
                     <form onSubmit={increaseQuantity}>
@@ -66,6 +69,8 @@ const Inventory = () => {
                     </form>
                 </div>
             </div>
+
+            {/* ManageInventory btn */}
             <Link to='/manageInventories'><button className='btn btn-primary border-0 my-5 py-2 rounded-3 fs-5 manage-btn'>Manage Inventories</button></Link>
         </div>
     );

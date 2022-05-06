@@ -3,6 +3,7 @@ import { Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import ManageInventory from '../ManageInventory/ManageInventory';
 
+//load all books data
 const ManageInventories = () => {
     const [books, setBooks] = useState([]);
     useEffect(() => {
@@ -13,7 +14,7 @@ const ManageInventories = () => {
             });
     }, []);
 
-
+    //Delete items
     const handleDeleteBook = id => {
         const proceed = window.confirm('Are you sure?');
         if (proceed) {
@@ -32,6 +33,8 @@ const ManageInventories = () => {
     return (
         <div>
             <h2 className='text-center my-5'>Manage Inventories</h2>
+
+            {/* Table header */}
             <Table striped bordered hover size="sm">
                 <thead>
                     <tr>
@@ -53,6 +56,8 @@ const ManageInventories = () => {
                     ></ManageInventory>)
                 }
             </div>
+
+            {/* AddInventory btn */}
             <Link to='/addInventoryItem'><button className='btn btn-primary border-0 my-5 py-2 rounded-3 fs-5 manage-btn'>Add Inventory Item</button></Link>
         </div>
     );

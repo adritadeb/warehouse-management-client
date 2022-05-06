@@ -4,6 +4,7 @@ import copyright from '../../../images/copyright.png';
 import './Footer.css';
 
 const Footer = () => {
+    //Get current year
     const today = new Date();
     const year = today.getFullYear();
     return (
@@ -11,9 +12,12 @@ const Footer = () => {
             <h4 className='fs-3 footer-part'>Books Stocker</h4>
             <div className='footer-copyright-part'>
                 <p><small>copyright</small></p>
+                {/* copyright symbol */}
                 <img className='mx-1 mb-3' src={copyright} alt="" />
                 <p><small>{year}</small></p>
             </div>
+
+            {/* Links */}
             <div className='footer-part'>
                 <Link className='text-decoration-none' to='/home'>Home</Link>
                 <Link className='text-decoration-none mx-2' to='/login'>Login</Link>

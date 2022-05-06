@@ -9,6 +9,7 @@ import './Header.css';
 const Header = () => {
     const [user] = useAuthState(auth);
 
+    //sign out
     const handleSignOut = () => {
         signOut(auth);
     }

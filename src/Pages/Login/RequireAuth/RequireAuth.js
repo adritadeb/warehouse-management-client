@@ -10,14 +10,17 @@ const RequireAuth = ({ children }) => {
     const [sendEmailVerification, sending] = useSendEmailVerification(auth);
     const location = useLocation();
 
+    //Show spinner
     if (loading || sending) {
         return <Loading></Loading>
     }
 
+    //Navigate to login page
     if (!user) {
         return <Navigate to='/login' state={{ from: location }} replace />
     }
 
+    //Email verification
     if (user?.providerData[0]?.providerId === 'password' && !user.emailVerified) {
         return <div className='text-center'>
             <h3 className='text-danger mt-3'>Your email is not verified</h3>

@@ -21,6 +21,7 @@ const Login = () => {
     const from = location.state?.from?.pathname || '/';
     const [token, setToken] = useState('');
 
+    //Get token
     useEffect(() => {
         const getToken = async () => {
             const email = user?.user?.email;
@@ -34,6 +35,7 @@ const Login = () => {
     }, [user])
 
 
+    //User login
     const handleLogin = async event => {
         event.preventDefault();
         const email = event.target.email.value;
@@ -45,6 +47,7 @@ const Login = () => {
         localStorage.setItem('accessToken', data.accessToken);
     }
 
+    //Password reset
     const handleResetPassword = async () => {
         const email = emailRef.current.value;
 
@@ -61,10 +64,12 @@ const Login = () => {
         navigate(from, { replace: true });
     }
 
+    //Show error
     if (error || error1) {
         errorMessage = <p className='text-danger'>Error: {error?.message} {error1?.message}</p>
     }
 
+    //Show spinner
     if (loading || sending) {
         return <Loading></Loading>
     }
@@ -72,6 +77,8 @@ const Login = () => {
     return (
         <div className='my-md-5 my-3 border border-3 border-secondary rounded-3 mx-auto p-5 login-form'>
             <h2 className='text-center mb-5'>Please Login</h2>
+
+            {/* login form */}
             <Form onSubmit={handleLogin}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email</Form.Label>
@@ -85,9 +92,13 @@ const Login = () => {
                     Login
                 </Button>
             </Form>
+
+            {/* send password reset email */}
             <p className='mt-4'>Forgot Password? <button onClick={handleResetPassword} className='btn btn-link text-decoration-none'>Reset Password</button></p>
             <p className='mt-4'>New to Books Stocker? <Link className='text-decoration-none' to='/register'>Please Register</Link></p>
             {errorMessage}
+
+            {/* Social login */}
             <SocialLogin></SocialLogin>
         </div>
     );

@@ -15,6 +15,7 @@ const Register = () => {
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
 
+    //User registration
     const handleRegister = event => {
         event.preventDefault();
         const email = event.target.email.value;
@@ -26,10 +27,12 @@ const Register = () => {
         navigate(from, { replace: true });
     }
 
+    //Show error
     if (error) {
         errorMessage = <p className='text-danger'>Error: {error?.message}</p>
     }
 
+    //Show spinner
     if (loading) {
         return <Loading></Loading>
     }
@@ -37,6 +40,8 @@ const Register = () => {
     return (
         <div className='my-md-5 my-3 border border-3 border-secondary rounded-3 mx-auto p-5 register-form'>
             <h2 className='text-center mb-5'>Please Register</h2>
+
+            {/* Registration form */}
             <Form onSubmit={handleRegister}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Name</Form.Label>
@@ -54,8 +59,12 @@ const Register = () => {
                     Register
                 </Button>
             </Form>
+
+            {/* navigate to login */}
             <p className='mt-4'>Already have an account? <Link className='text-decoration-none' to='/login'>Please Login</Link></p>
             {errorMessage}
+
+            {/* Social login */}
             <SocialLogin></SocialLogin>
         </div>
     );

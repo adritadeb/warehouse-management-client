@@ -8,6 +8,7 @@ const NotFound = () => {
             <h4 className='text-center fw-normal'>Oops!!!</h4>
             <h3 className='text-center fw-normal'>The page you are looking for is not found</h3>
             <h2 className='text-center fs-1'>404</h2>
+            {/* 404 image */}
             <img className='ms-5' src={notFound} alt="" />
         </div>
     );

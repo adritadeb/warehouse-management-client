@@ -7,6 +7,7 @@ const ManageInventory = ({ book, handleDeleteBook }) => {
 
     return (
         <div>
+            {/* Table body */}
             <Table striped bordered hover size="sm">
                 <tbody>
                     <tr>

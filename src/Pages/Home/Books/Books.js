@@ -5,6 +5,8 @@ import './Books.css';
 
 const Books = () => {
     const [books, setBooks] = useState([]);
+
+    //load books data
     useEffect(() => {
         fetch('http://localhost:5000/books')
             .then(res => res.json())
@@ -24,6 +26,8 @@ const Books = () => {
                     ></Book>)
                 }
             </div>
+
+            {/* ManageInventory btn */}
             <Link to='/manageInventories'><button className='btn btn-primary border-0 my-5 py-2 rounded-3 fs-5 manage-btn'>Manage Inventories</button></Link>
         </div>
     );

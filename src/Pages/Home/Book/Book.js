@@ -6,6 +6,7 @@ const Book = ({ book }) => {
     const { _id, img, name, body, supplier, price, quantity } = book;
     const navigate = useNavigate();
 
+    //Navigation to inventory
     const navigateToInventory = id => {
         navigate(`/inventory/${id}`);
     }
