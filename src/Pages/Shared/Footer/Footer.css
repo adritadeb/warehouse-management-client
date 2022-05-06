@@ -1,0 +1,18 @@
+.footer-copyright-part {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 768px) {
+    .footer-part {
+        margin-left: 50px;
+    }
+
+    .footer-copyright-part {
+        display: flex;
+        justify-content: left;
+        margin-left: 50px;
+    }
+
+}

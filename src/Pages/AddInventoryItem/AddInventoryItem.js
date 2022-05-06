@@ -23,7 +23,6 @@ const AddInventoryItem = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data.insertedId);
                 toast('A new item added');
                 event.target.reset();
             });

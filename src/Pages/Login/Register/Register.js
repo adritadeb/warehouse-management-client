@@ -5,6 +5,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import './Register.css';
 
 const Register = () => {
     const [createUserWithEmailAndPassword, user, loading, error] = useCreateUserWithEmailAndPassword(auth);
@@ -34,7 +35,7 @@ const Register = () => {
     }
 
     return (
-        <div className='my-5 border border-3 border-secondary rounded-3 w-50 mx-auto p-5'>
+        <div className='my-md-5 my-3 border border-3 border-secondary rounded-3 mx-auto p-5 register-form'>
             <h2 className='text-center mb-5'>Please Register</h2>
             <Form onSubmit={handleRegister}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">

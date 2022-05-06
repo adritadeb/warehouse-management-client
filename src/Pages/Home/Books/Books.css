@@ -2,8 +2,17 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 25px;
+    margin-left: 30px;
 }
 
 .manage-btn {
-    margin-left: 300px;
+    margin-left: 20px;
+}
+
+@media only screen and (max-width:768px) {
+    .books {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        margin: 0 10px;
+    }
 }

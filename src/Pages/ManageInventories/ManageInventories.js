@@ -53,7 +53,7 @@ const ManageInventories = () => {
                     ></ManageInventory>)
                 }
             </div>
-            <Link to='/addInventoryItem'><button className='btn btn-primary border-0 w-25 ms-2 my-3 py-2 rounded-3 fs-5'>Add Inventory Item</button></Link>
+            <Link to='/addInventoryItem'><button className='btn btn-primary border-0 my-5 py-2 rounded-3 fs-5 manage-btn'>Add Inventory Item</button></Link>
         </div>
     );
 };
