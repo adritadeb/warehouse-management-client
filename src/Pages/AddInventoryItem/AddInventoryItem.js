@@ -20,7 +20,7 @@ const AddInventoryItem = () => {
         const newItem = { name, email, supplier, price, body, quantity, img };
 
         //Add an item
-        fetch('http://localhost:5000/books', {
+        fetch('https://pacific-bastion-78618.herokuapp.com/books', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

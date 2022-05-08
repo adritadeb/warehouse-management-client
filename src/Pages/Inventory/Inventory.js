@@ -9,7 +9,7 @@ const Inventory = () => {
 
     //Load book data with id
     useEffect(() => {
-        const url = `http://localhost:5000/inventory/${id}`;
+        const url = `https://pacific-bastion-78618.herokuapp.com/inventory/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setBook(data));
@@ -27,7 +27,7 @@ const Inventory = () => {
         quantity = newQuantity;
         const updatedQuantity = { quantity };
 
-        const url = `http://localhost:5000/inventory/${id}`;
+        const url = `https://pacific-bastion-78618.herokuapp.com/inventory/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -55,7 +55,7 @@ const Inventory = () => {
         const newQuantity = quantity + parseInt(inputQuantity)
         quantity = newQuantity;
         const updatedQuantity = { quantity };
-        const url = `http://localhost:5000/inventory/${id}`;
+        const url = `https://pacific-bastion-78618.herokuapp.com/inventory/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {

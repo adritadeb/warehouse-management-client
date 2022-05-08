@@ -8,7 +8,7 @@ const Books = () => {
 
     //load books data
     useEffect(() => {
-        fetch('http://localhost:5000/books')
+        fetch('https://pacific-bastion-78618.herokuapp.com/books')
             .then(res => res.json())
             .then(data => {
                 setBooks(data);
