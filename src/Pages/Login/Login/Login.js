@@ -26,7 +26,7 @@ const Login = () => {
         const getToken = async () => {
             const email = user?.user?.email;
             if (email) {
-                const { data } = await axios.post('https://pacific-bastion-78618.herokuapp.com/login', { email });
+                const { data } = await axios.post('https://secret-everglades-75305.herokuapp.com/login', { email });
                 setToken(data.accessToken);
                 localStorage.setItem('accessToken', data.accessToken);
             }
@@ -43,7 +43,7 @@ const Login = () => {
 
         await signInWithEmailAndPassword(email, password);
 
-        const { data } = await axios.post('https://pacific-bastion-78618.herokuapp.com/login', { email });
+        const { data } = await axios.post('https://secret-everglades-75305.herokuapp.com/login', { email });
         localStorage.setItem('accessToken', data.accessToken);
     }
 

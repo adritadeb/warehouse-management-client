@@ -8,7 +8,7 @@ const Books = () => {
 
     //load books data
     useEffect(() => {
-        fetch('https://pacific-bastion-78618.herokuapp.com/books')
+        fetch('https://secret-everglades-75305.herokuapp.com/books')
             .then(res => res.json())
             .then(data => {
                 setBooks(data);
