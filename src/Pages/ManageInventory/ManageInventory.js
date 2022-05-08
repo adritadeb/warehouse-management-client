@@ -8,11 +8,11 @@ const ManageInventory = ({ book, handleDeleteBook }) => {
     return (
         <div>
             {/* Table body */}
-            <Table striped bordered hover size="sm">
+            <Table className='container-fluid' striped bordered hover size="sm">
                 <tbody>
                     <tr>
                         <td className='table-img'>
-                            <img src={img} alt="" />
+                            <img className='w-75' src={img} alt="" />
                         </td>
                         <td className='table-name'>{name}</td>
                         <td className='table-supplier'>{supplier}</td>

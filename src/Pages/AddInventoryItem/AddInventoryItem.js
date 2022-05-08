@@ -1,19 +1,23 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
+import auth from '../../firebase.init';
 
 const AddInventoryItem = () => {
+    const [user] = useAuthState(auth);
 
     const handleAddItem = event => {
         event.preventDefault();
         //Getting input fields value
         const name = event.target.name.value;
+        const email = event.target.email.value;
         const supplier = event.target.supplier.value;
         const price = event.target.price.value;
         const body = event.target.description.value;
         const quantity = event.target.quantity.value;
         const img = event.target.image.value;
 
-        const newItem = { name, supplier, price, body, quantity, img };
+        const newItem = { name, email, supplier, price, body, quantity, img };
 
         //Add an item
         fetch('http://localhost:5000/books', {
@@ -37,6 +41,8 @@ const AddInventoryItem = () => {
             {/* add item form */}
             <form onSubmit={handleAddItem} className='w-50 mx-auto'>
                 <input className='mb-2 w-100' type="text" name="name" placeholder='Name' required autoComplete='off' />
+                <br />
+                <input className='mb-2 w-100' type="email" name="email" placeholder='Email' value={user?.email} required readOnly disabled />
                 <br />
                 <input className='w-100' type="text" name="supplier" placeholder='Supplier' required autoComplete='off' />
                 <br />

@@ -16,7 +16,7 @@ const ManageInventories = () => {
 
     //Delete items
     const handleDeleteBook = id => {
-        const proceed = window.confirm('Are you sure?');
+        const proceed = window.confirm('Are you sure you want to delete?');
         if (proceed) {
             const url = `http://localhost:5000/inventory/${id}`;
             fetch(url, {
@@ -35,7 +35,7 @@ const ManageInventories = () => {
             <h2 className='text-center my-5'>Manage Inventories</h2>
 
             {/* Table header */}
-            <Table striped bordered hover size="sm">
+            <Table className='container-fluid' striped bordered hover size="sm">
                 <thead>
                     <tr>
                         <th>Image</th>
