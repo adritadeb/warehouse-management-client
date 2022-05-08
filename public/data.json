@@ -3,7 +3,7 @@
         "img": "https://i.ibb.co/zHp8P78/book1.jpg",
         "name": "Zero to One",
         "supplier": "Church Morris",
-        "body": "It is a book on start up. It will help you for start up a business. It is by an American entrepreneur and investor Peter Thiel co-written with Blake Masters.",
+        "body": "It is a book on startups. It will help you start up a business. It is by an American entrepreneur and investor Peter Thiel co-written with Blake Masters.",
         "quantity": 60,
         "price": 18.00
     },
@@ -11,23 +11,47 @@
         "img": "https://i.ibb.co/Wprg65S/book2.jpg",
         "name": "Atomic Habits",
         "supplier": "Laurel Durham",
-        "body": "It is a Newyork times best seller. Stock this book for change your habits by taking simple, easy steps. It is best for productivity. The book is written by James Clear.",
+        "body": "It is a Newyork Times bestseller. Stock this book to change your habits by taking simple, easy steps. It is best for productivity. The book is written by James Clear.",
         "quantity": 55,
         "price": 12.00
     },
     {
         "img": "https://i.ibb.co/YQQDxtq/book3.jpg",
         "name": "Leaders Eat Last",
-        "supplier": "Laurel Durham",
-        "body": "The book is by Simon Sinek. It will be your favourite book on leadership. A must read for all the people who think they are leaders!",
+        "supplier": "Eleanor Hughes",
+        "body": "The book is by Simon Sinek. It will be your favourite book on leadership. A must-read for all the people who think they are leaders!",
         "quantity": 70,
         "price": 10.99
     },
     {
         "img": "https://i.ibb.co/t42t8xS/book4.webp",
         "name": "Five Stars",
-        "supplier": "Laurel Durham",
-        "body": "It's a book on communication skills. Stock it for know how to get to master the art of persuasion. This book is by a best selling author Carmine Gallo.",
+        "supplier": "Gilbert Payne",
+        "body": "It's a book on communication skills. Stock it for knowing how to get to master the art of persuasion. This book is by the best-selling author Carmine Gallo.",
+        "quantity": 100,
+        "price": 11.99
+    },
+    {
+        "img": "https://i.ibb.co/7Q86Fcq/book5.png",
+        "name": "Just Listen",
+        "supplier": "Benjamin Fleming",
+        "body": "A book by Mark Goulston. A highly recommended book if you want to increase your influence and be more persuasive. You can stock this book for make you a stronger communicator.",
+        "quantity": 60,
+        "price": 10.80
+    },
+    {
+        "img": "https://i.ibb.co/QK56bmS/book6.jpg",
+        "name": "Shoe Dog",
+        "supplier": "Derrick Morris",
+        "body": "A Memoir by the Creator of Nike Phil Knight. The history of Nike and its early challenges to its evolution into one of the world's most recognized and profitable companies are drawn here nicely.",
+        "quantity": 120,
+        "price": 20.00
+    },
+    {
+        "img": "https://i.ibb.co/t42t8xS/book4.webp",
+        "name": "Five Stars",
+        "supplier": "Juanita Jimenez",
+        "body": "It's a book on communication skills. Stock it for knowing how to get to master the art of persuasion. This book is by the best-selling author Carmine Gallo.",
         "quantity": 100,
         "price": 11.99
     },
@@ -38,45 +62,5 @@
         "body": "A book by Mark Goulston. A highly recommended book if you want to increase your influence and be more persuasive. You can stock this book for make you a stronger communicator.",
         "quantity": 60,
         "price": 10.80
-    },
-    {
-        "img": "https://i.ibb.co/QK56bmS/book6.jpg",
-        "name": "Shoe Dog",
-        "supplier": "Laurel Durham",
-        "body": "A Memoir by the Creator of Nike Phil Knight. The history of Nike and its early challenges to its evolution into one of the world's most recognized and profitable companies are drawn here nicely.",
-        "quantity": 120,
-        "price": 20.00
-    },
-    {
-        "img": "https://i.ibb.co/FV66n0P/index.jpg",
-        "name": "Laurel Durham",
-        "supplier": "Laurel Durham",
-        "body": 115,
-        "quantity": 2,
-        "price": 100
-    },
-    {
-        "img": "https://i.ibb.co/FV66n0P/index.jpg",
-        "name": "Laurel Durham",
-        "supplier": "Laurel Durham",
-        "body": 115,
-        "quantity": 2,
-        "price": 100
-    },
-    {
-        "img": "https://i.ibb.co/FV66n0P/index.jpg",
-        "name": "Laurel Durham",
-        "supplier": "Laurel Durham",
-        "body": 115,
-        "quantity": 2,
-        "price": 100
-    },
-    {
-        "img": "https://i.ibb.co/FV66n0P/index.jpg",
-        "name": "Laurel Durham",
-        "supplier": "Laurel Durham",
-        "body": 115,
-        "quantity": 2,
-        "price": 100
     }
 ]

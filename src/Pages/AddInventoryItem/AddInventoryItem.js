@@ -36,7 +36,7 @@ const AddInventoryItem = () => {
 
     return (
         <div className='container'>
-            <h2 className='text-center my-4'>Add a new item</h2>
+            <h2 className='text-center my-5 fs-1'>Add a new item</h2>
 
             {/* add item form */}
             <form onSubmit={handleAddItem} className='w-50 mx-auto'>
@@ -54,7 +54,7 @@ const AddInventoryItem = () => {
                 <br />
                 <input className='mb-3 w-100' type="text" name="image" placeholder='Image url' required autoComplete='off' />
                 <br />
-                <input className='w-100 btn btn-primary rounded-3' type="submit" value="Add Item" />
+                <input className='w-100 btn text-white fs-5 rounded-3 border-0 item-btn' type="submit" value="Add Item" />
             </form>
         </div >
     );

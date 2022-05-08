@@ -17,7 +17,7 @@ const Books = () => {
     const slicedBooks = books.slice(0, 6);
     return (
         <div id='books' className='container'>
-            <h2 className='text-center mb-4'>Books</h2>
+            <h2 className='text-center heading mt-5 mb-4'>Books</h2>
             <div className='books'>
                 {
                     slicedBooks.map(book => <Book

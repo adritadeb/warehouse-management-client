@@ -11,13 +11,13 @@ const MyItem = ({ addedItem, handleDeleteItem }) => {
                 <tbody>
                     <tr>
                         <td className='table-img'>
-                            <img className='w-75' src={img} alt="" />
+                            <img style={{ height: '100px' }} className='w-75' src={img} alt="" />
                         </td>
                         <td className='table-name'>{name}</td>
                         <td className='table-supplier'>{supplier}</td>
-                        <td className='table-price'>{price}</td>
+                        <td className='table-price'>${price}</td>
                         <td className='table-quantity'>{quantity}</td>
-                        <td><button onClick={() => handleDeleteItem(_id)} className='btn btn-danger border-0'>X</button></td>
+                        <td><button onClick={() => handleDeleteItem(_id)} className='btn btn-danger border-0 ms-2 fs-5'>Delete</button></td>
                     </tr>
                 </tbody>
             </Table>

@@ -3,25 +3,33 @@ import auth from '../../firebase.init';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import MyItem from '../MyItem/MyItem';
 import { Table } from 'react-bootstrap';
+import axios from 'axios';
+import { signOut } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
 
 const MyItems = () => {
     const [user] = useAuthState(auth);
     const [addedItems, setAddedItems] = useState([]);
+    const navigate = useNavigate();
 
     //find items with user email
     useEffect(() => {
-        const getAddedItems = () => {
+        const getAddedItems = async () => {
             const email = user?.email;
             const url = `http://localhost:5000/myItems?email=${email}`;
             try {
-                fetch(url)
-                    .then(res => res.json())
-                    .then(data => {
-                        setAddedItems(data)
-                    })
+                const { data } = await axios.get(url, {
+                    headers: {
+                        authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                    }
+                });
+                setAddedItems(data);
             }
             catch (error) {
-                console.log(error.message)
+                if (error.response.status === 403 || error.response.status === 401) {
+                    signOut(auth);
+                    navigate('/login');
+                }
             }
         }
         getAddedItems();
@@ -44,8 +52,8 @@ const MyItems = () => {
     };
 
     return (
-        <div>
-            <h2 className='text-center my-5'>Your added items</h2>
+        <div >
+            <h2 className='text-center my-5 fs-1 text-secondary'>Your added items</h2>
 
             {/* Table header */}
             <Table striped bordered hover size="sm">

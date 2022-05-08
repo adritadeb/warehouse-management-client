@@ -1,12 +1,17 @@
 .books {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 25px;
+    grid-gap: 35px;
     margin-left: 30px;
 }
 
 .manage-btn {
     margin-left: 20px;
+    background-color: darkcyan;
+}
+
+.manage-btn:hover {
+    background-color: rgb(3, 172, 172);
 }
 
 @media only screen and (max-width:768px) {

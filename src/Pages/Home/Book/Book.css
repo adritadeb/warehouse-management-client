@@ -2,3 +2,15 @@
     border: 2px solid darkcyan;
     border-radius: 5px;
 }
+
+.single-book img {
+    height: 270px;
+}
+
+.item-btn {
+    background-color: darkcyan;
+}
+
+.item-btn:hover {
+    background-color: rgb(3, 172, 172);
+}

@@ -3,7 +3,7 @@ import React from 'react';
 const Blogs = () => {
     return (
         <div className='container w-75'>
-            <h1 className='text-center my-5'>QnA Section</h1>
+            <h1 className='text-center fw-bolder my-5'>QnA Section</h1>
             <div className='border border-3 border-secondary rounded-3 p-5'>
 
                 {/* first question */}

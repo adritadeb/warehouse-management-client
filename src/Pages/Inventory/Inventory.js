@@ -76,7 +76,7 @@ const Inventory = () => {
         <div>
             {/* show item with id */}
             <div className='d-md-flex justify-content-center align-items-center container'>
-                <div className='single-book w-md-25 m-5'>
+                <div className='single-book w-50 m-5'>
                     <img className='w-100' src={img} alt="" />
                     <div className='py-4 px-2'>
                         <h2>{name}</h2>
