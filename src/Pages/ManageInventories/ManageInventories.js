@@ -35,7 +35,7 @@ const ManageInventories = () => {
             <h2 className='text-center my-5'>Manage Inventories</h2>
 
             {/* Table header */}
-            <Table className='container-fluid' striped bordered hover size="sm">
+            <Table striped bordered hover size="sm">
                 <thead>
                     <tr>
                         <th>Image</th>

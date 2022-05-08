@@ -7,7 +7,7 @@ const MyItem = ({ addedItem, handleDeleteItem }) => {
     return (
         <div>
             {/* Table body */}
-            <Table className='container-fluid' striped bordered hover size="sm">
+            <Table striped bordered hover size="sm">
                 <tbody>
                     <tr>
                         <td className='table-img'>
